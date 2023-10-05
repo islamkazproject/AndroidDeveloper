@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Greeting Card"
 include(":app")
- 
+include(":happybirthday")
