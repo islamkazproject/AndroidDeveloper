@@ -11,6 +11,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.happybirthday.ui.theme.GreetingCardTheme
@@ -25,7 +26,7 @@ class MainActivityRun : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ){
-
+                    GreetingText(message = "Happy Birthday Islam!", from = "From Bulat")
                 }
             }
         }
@@ -38,7 +39,8 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
         Text(
             text = message,
             fontSize = 100.sp,
-            lineHeight = 80.sp
+            lineHeight = 116.sp,
+            textAlign = TextAlign.Center
         )
         Text(
             text = from,
