@@ -35,7 +35,7 @@ class MainActivityRun : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
-                ){
+                ) {
                     GreetingImage("Happy Birthday Islam!", "From Bulat")
                 }
             }
@@ -50,7 +50,10 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
             text = message,
             fontSize = 100.sp,
             lineHeight = 116.sp,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(8.dp)
         )
         Text(
             text = from,
@@ -61,8 +64,9 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
         )
     }
 }
+
 @Composable
-fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier){
+fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.androidparty)
     Box {
         Image(
