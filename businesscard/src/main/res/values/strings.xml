@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">BusinessCard</string>
+    <string name="app_name">GreetingCardTheme</string>
+    <string name="my_name">Islam</string>
+    <string name="descr">Python Developer</string>
+    <string name="phone">+79961254315</string>
+    <string name="tg">mukanov_ir</string>
+    <string name="email">islamkazproject@gmail.com</string>
 </resources>
