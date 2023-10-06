@@ -19,6 +19,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.happybirthday.ui.theme.GreetingCardTheme
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
 
 class MainActivityRun : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,16 +56,17 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
                 .align(alignment = Alignment.End)
         )
     }
-
+}
+@Composable
+fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier){
+    val image = painterResource(R.drawable.androidparty)
+    Image(painter = image, contentDescription = null)
 }
 
 @Preview(showBackground = true)
 @Composable
 fun BirthdayCardPreview() {
     GreetingCardTheme {
-        GreetingText(
-            message = "Happy Birthday Islam!",
-            from = "From Bulat"
-        )
+        GreetingImage("Happy Birthday Islam", "From Bulat")
     }
 }
