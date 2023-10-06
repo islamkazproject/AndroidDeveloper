@@ -24,6 +24,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -39,7 +40,7 @@ class MainActivityBusinessCard : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
+                    ImageAuthor()
                     ContactList()
                 }
             }
@@ -63,7 +64,8 @@ fun ImageAuthor() {
         Image(
             painter = image,
             contentDescription = null,
-            modifier = Modifier.height(150.dp))
+            modifier = Modifier.height(150.dp)
+        )
         Text(
             text = stringResource(R.string.my_name),
             modifier = Modifier.padding(top = 34.dp, bottom = 8.dp),
@@ -73,6 +75,63 @@ fun ImageAuthor() {
             text = stringResource(R.string.descr),
             fontSize = 16.sp
         )
+
+        Column(
+            modifier = Modifier
+                .padding(top = 150.dp, start = 50.dp)
+                .height(200.dp)
+                .fillMaxWidth()
+                .fillMaxHeight()
+                .background(Color(0xFFFFFFFF)),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.Start
+        ) {
+            Row(modifier = Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
+                Image(
+                    painter = phone,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .height(40.dp)
+                        .padding(end = 10.dp)
+                )
+                Text(
+                    text = stringResource(R.string.phone),
+                    fontSize = 16.sp,
+                    textAlign = TextAlign.Justify
+                )
+            }
+            Row(modifier = Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
+                Image(
+                    painter = nn,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .height(40.dp)
+                        .padding(end = 10.dp)
+                )
+                Text(
+                    text = stringResource(R.string.tg),
+                    fontSize = 16.sp,
+                    textAlign = TextAlign.Justify
+                )
+            }
+            Row(modifier = Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
+                Image(
+                    painter = email,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .height(40.dp)
+                        .padding(end = 10.dp)
+                )
+                Text(
+                    text = stringResource(R.string.email),
+                    fontSize = 16.sp,
+                    textAlign = TextAlign.Justify
+                )
+            }
+
+        }
+    }
+}
 
 @Composable
 fun ContactList() {
@@ -105,7 +164,8 @@ fun ContactList() {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun ImageAuthorPreview() {
     GreetingCardTheme {
+        ImageAuthor()
     }
 }
